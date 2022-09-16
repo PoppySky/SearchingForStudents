@@ -15,9 +15,15 @@ namespace SearchingForStudents
         public Form1()
         {
             InitializeComponent();
+            pictureBox_CodePic.Image = SearchingForStudents.Properties.Resources._1;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void linkChangePic_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+        }
+
+        private void button_LogIn_Click(object sender, EventArgs e)
         {
 
         }
