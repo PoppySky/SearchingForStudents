@@ -15,12 +15,22 @@ namespace SearchingForStudents
         public Form1()
         {
             InitializeComponent();
-            pictureBox_CodePic.Image = SearchingForStudents.Properties.Resources._1;
         }
 
         private void linkChangePic_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+            Image[] images =
+            {
+                SearchingForStudents.Properties.Resources._1,
+                SearchingForStudents.Properties.Resources._2,
+                SearchingForStudents.Properties.Resources._3,
+                SearchingForStudents.Properties.Resources._4,
+                SearchingForStudents.Properties.Resources._5,
+                SearchingForStudents.Properties.Resources._6,
+                SearchingForStudents.Properties.Resources._7
+            };
+            var rand = new Random();
+            pictureBox_CodePic.Image = images[rand.Next(images.Length)];
         }
 
         private void button_LogIn_Click(object sender, EventArgs e)
