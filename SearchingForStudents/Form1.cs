@@ -52,11 +52,16 @@ namespace SearchingForStudents
         private void button_LogIn_Click(object sender, EventArgs e)
         {
             User user = new User();
-            if(textBox_Code.Text == imagesWithCodes[correctImgWithCode].Item2  && textBox_UserName.Text == user.Username 
+            if (textBox_Code.Text == imagesWithCodes[correctImgWithCode].Item2 && textBox_UserName.Text == user.Username
                 && textBox_Pass.Text == user.Password)
             {
-                MessageBox.Show("OK");
+                this.Hide();
+                Form2 form2 = new Form2();
+                form2.Closed += (s, args) => this.Close();
+                form2.Show();
+
             }
+            else MessageBox.Show("Bad Data or Empty Form");
         }
     }
 }
