@@ -17,6 +17,20 @@ namespace SearchingForStudents
             InitializeComponent();
         }
 
+        private void checkImageCode()
+        {
+            string[] codes =
+            {
+                "mxyxw",
+                "b5nmm",
+                "74853",
+                "cg5dd",
+                "x3deb",
+                "befbd",
+                "c7gb3"
+            };
+        }
+
         private void linkChangePic_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Image[] images =
@@ -30,7 +44,8 @@ namespace SearchingForStudents
                 SearchingForStudents.Properties.Resources._7
             };
             var rand = new Random();
-            pictureBox_CodePic.Image = images[rand.Next(images.Length)];
+            //pictureBox_CodePic.Image = images[rand.Next(images.Length)];
+            
         }
 
         private void button_LogIn_Click(object sender, EventArgs e)
