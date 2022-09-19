@@ -101,7 +101,7 @@
             // 
             // pictureBox_CodePic
             // 
-            this.pictureBox_CodePic.Image = global::SearchingForStudents.Properties.Resources._2;
+            this.pictureBox_CodePic.Image = global::SearchingForStudents.Properties.Resources._1;
             this.pictureBox_CodePic.Location = new System.Drawing.Point(42, 234);
             this.pictureBox_CodePic.Name = "pictureBox_CodePic";
             this.pictureBox_CodePic.Size = new System.Drawing.Size(100, 32);

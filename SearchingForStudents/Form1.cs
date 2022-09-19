@@ -17,40 +17,46 @@ namespace SearchingForStudents
             InitializeComponent();
         }
 
-        private void checkImageCode()
+        public class User
         {
-            string[] codes =
-            {
-                "mxyxw",
-                "b5nmm",
-                "74853",
-                "cg5dd",
-                "x3deb",
-                "befbd",
-                "c7gb3"
-            };
+            private string _username = "admin";
+            private string _password = "Qwerty1@34";
+            
+            public string Username { get => _username; }
+            public string Password { get => _password; }
         }
+
+        (Image, string)[] imagesWithCodes =
+            {
+                (SearchingForStudents.Properties.Resources._1, "mxyxw"),
+                (SearchingForStudents.Properties.Resources._2, "b5nmm"),
+                (SearchingForStudents.Properties.Resources._3, "74853"),
+                (SearchingForStudents.Properties.Resources._4, "cg5dd"),
+                (SearchingForStudents.Properties.Resources._5, "x3deb"),
+                (SearchingForStudents.Properties.Resources._6, "befbd"),
+                (SearchingForStudents.Properties.Resources._7, "c7gb3")
+            };
+
+        int correctImgWithCode = 0;
 
         private void linkChangePic_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Image[] images =
-            {
-                SearchingForStudents.Properties.Resources._1,
-                SearchingForStudents.Properties.Resources._2,
-                SearchingForStudents.Properties.Resources._3,
-                SearchingForStudents.Properties.Resources._4,
-                SearchingForStudents.Properties.Resources._5,
-                SearchingForStudents.Properties.Resources._6,
-                SearchingForStudents.Properties.Resources._7
-            };
+            
             var rand = new Random();
-            //pictureBox_CodePic.Image = images[rand.Next(images.Length)];
+            var los = rand.Next(imagesWithCodes.Length);
+            pictureBox_CodePic.Image = imagesWithCodes[los].Item1;
+            correctImgWithCode = los;
             
         }
 
         private void button_LogIn_Click(object sender, EventArgs e)
         {
-
+            User user = new User();
+            if(textBox_Code.Text == imagesWithCodes[correctImgWithCode].Item2  && textBox_UserName.Text == user.Username 
+                && textBox_Pass.Text == user.Password)
+            {
+                MessageBox.Show("OK");
+            }
         }
     }
 }
