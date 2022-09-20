@@ -27,6 +27,11 @@ namespace SearchingForStudents
             return lines;
         }
 
+        public void writeFile(string textFile, string text)
+        {
+            File.WriteAllText(textFile, text);
+        }
+
         public bool checkContains(string allWord, string partWord, int optionNum)
         {
             string regex;
@@ -64,12 +69,20 @@ namespace SearchingForStudents
             string searchedNames = "";
             int namePart = comboBox_FirstCriteria.SelectedIndex;
             int optionNum = comboBox_SecondCriteria.SelectedIndex;
-            string[] names = readFile("C:\\Users\\student\\Source\\Repos\\Filippo0420\\SearchingForStudents\\SearchingForStudents\\Data\\uczen.txt");
+            string path = "C:\\Users\\student\\Source\\Repos\\Filippo0420\\SearchingForStudents\\SearchingForStudents\\Data\\uczen.txt";
+            string[] names = readFile(path);
             foreach(string name in names){
                 string toCheck = name.Split(' ')[namePart];
-                if (checkContains(toCheck, textBox_ThirdCriteria.Text, optionNum)) searchedNames += $"\t{name}";
+                if (checkContains(toCheck, textBox_ThirdCriteria.Text, optionNum)) searchedNames += $"{name}\n";
             }
-            textBox_ShowData.Text = searchedNames;
+            richTextBox_showData.Text = searchedNames;
+        }
+
+        private void button_AddStudent_Click(object sender, EventArgs e)
+        {
+            string path = "C:\\Users\\student\\Source\\Repos\\Filippo0420\\SearchingForStudents\\SearchingForStudents\\Data\\uczen.txt";
+
+            writeFile(path, $"{textBox_name.Text} {textBox_surname.Text} {textBox_class.Text}");
         }
     }
 }

@@ -31,19 +31,19 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.searchStudentPage = new System.Windows.Forms.TabPage();
             this.button_Search = new System.Windows.Forms.Button();
-            this.textBox_ShowData = new System.Windows.Forms.TextBox();
             this.textBox_ThirdCriteria = new System.Windows.Forms.TextBox();
             this.comboBox_SecondCriteria = new System.Windows.Forms.ComboBox();
             this.comboBox_FirstCriteria = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.addStudentPage = new System.Windows.Forms.TabPage();
             this.button_AddStudent = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_class = new System.Windows.Forms.TextBox();
+            this.textBox_surname = new System.Windows.Forms.TextBox();
+            this.textBox_name = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.richTextBox_showData = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.searchStudentPage.SuspendLayout();
             this.addStudentPage.SuspendLayout();
@@ -61,8 +61,8 @@
             // 
             // searchStudentPage
             // 
+            this.searchStudentPage.Controls.Add(this.richTextBox_showData);
             this.searchStudentPage.Controls.Add(this.button_Search);
-            this.searchStudentPage.Controls.Add(this.textBox_ShowData);
             this.searchStudentPage.Controls.Add(this.textBox_ThirdCriteria);
             this.searchStudentPage.Controls.Add(this.comboBox_SecondCriteria);
             this.searchStudentPage.Controls.Add(this.comboBox_FirstCriteria);
@@ -84,15 +84,6 @@
             this.button_Search.Text = "Szukaj";
             this.button_Search.UseVisualStyleBackColor = true;
             this.button_Search.Click += new System.EventHandler(this.button_Search_Click);
-            // 
-            // textBox_ShowData
-            // 
-            this.textBox_ShowData.Location = new System.Drawing.Point(10, 170);
-            this.textBox_ShowData.Multiline = true;
-            this.textBox_ShowData.Name = "textBox_ShowData";
-            this.textBox_ShowData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_ShowData.Size = new System.Drawing.Size(775, 246);
-            this.textBox_ShowData.TabIndex = 4;
             // 
             // textBox_ThirdCriteria
             // 
@@ -138,9 +129,9 @@
             // addStudentPage
             // 
             this.addStudentPage.Controls.Add(this.button_AddStudent);
-            this.addStudentPage.Controls.Add(this.textBox5);
-            this.addStudentPage.Controls.Add(this.textBox4);
-            this.addStudentPage.Controls.Add(this.textBox3);
+            this.addStudentPage.Controls.Add(this.textBox_class);
+            this.addStudentPage.Controls.Add(this.textBox_surname);
+            this.addStudentPage.Controls.Add(this.textBox_name);
             this.addStudentPage.Controls.Add(this.label4);
             this.addStudentPage.Controls.Add(this.label3);
             this.addStudentPage.Controls.Add(this.label2);
@@ -160,27 +151,28 @@
             this.button_AddStudent.TabIndex = 6;
             this.button_AddStudent.Text = "Dodaj";
             this.button_AddStudent.UseVisualStyleBackColor = true;
+            this.button_AddStudent.Click += new System.EventHandler(this.button_AddStudent_Click);
             // 
-            // textBox5
+            // textBox_class
             // 
-            this.textBox5.Location = new System.Drawing.Point(197, 182);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(265, 20);
-            this.textBox5.TabIndex = 5;
+            this.textBox_class.Location = new System.Drawing.Point(197, 182);
+            this.textBox_class.Name = "textBox_class";
+            this.textBox_class.Size = new System.Drawing.Size(265, 20);
+            this.textBox_class.TabIndex = 5;
             // 
-            // textBox4
+            // textBox_surname
             // 
-            this.textBox4.Location = new System.Drawing.Point(197, 115);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(265, 20);
-            this.textBox4.TabIndex = 4;
+            this.textBox_surname.Location = new System.Drawing.Point(197, 115);
+            this.textBox_surname.Name = "textBox_surname";
+            this.textBox_surname.Size = new System.Drawing.Size(265, 20);
+            this.textBox_surname.TabIndex = 4;
             // 
-            // textBox3
+            // textBox_name
             // 
-            this.textBox3.Location = new System.Drawing.Point(197, 56);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(265, 20);
-            this.textBox3.TabIndex = 3;
+            this.textBox_name.Location = new System.Drawing.Point(197, 56);
+            this.textBox_name.Name = "textBox_name";
+            this.textBox_name.Size = new System.Drawing.Size(265, 20);
+            this.textBox_name.TabIndex = 3;
             // 
             // label4
             // 
@@ -212,6 +204,14 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Imię";
             // 
+            // richTextBox_showData
+            // 
+            this.richTextBox_showData.Location = new System.Drawing.Point(9, 185);
+            this.richTextBox_showData.Name = "richTextBox_showData";
+            this.richTextBox_showData.Size = new System.Drawing.Size(776, 231);
+            this.richTextBox_showData.TabIndex = 6;
+            this.richTextBox_showData.Text = "";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,17 +235,17 @@
         private System.Windows.Forms.TabPage searchStudentPage;
         private System.Windows.Forms.TabPage addStudentPage;
         private System.Windows.Forms.Button button_Search;
-        private System.Windows.Forms.TextBox textBox_ShowData;
         private System.Windows.Forms.TextBox textBox_ThirdCriteria;
         private System.Windows.Forms.ComboBox comboBox_SecondCriteria;
         private System.Windows.Forms.ComboBox comboBox_FirstCriteria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_AddStudent;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_class;
+        private System.Windows.Forms.TextBox textBox_surname;
+        private System.Windows.Forms.TextBox textBox_name;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RichTextBox richTextBox_showData;
     }
 }
