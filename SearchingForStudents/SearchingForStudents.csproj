@@ -90,6 +90,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\uczen.txt" />
     <Content Include="Photos\1.png" />
     <Content Include="Photos\2.png" />
     <Content Include="Photos\3.png" />

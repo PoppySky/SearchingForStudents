@@ -30,20 +30,20 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.searchStudentPage = new System.Windows.Forms.TabPage();
-            this.addStudentPage = new System.Windows.Forms.TabPage();
+            this.button_Search = new System.Windows.Forms.Button();
+            this.textBox_ShowData = new System.Windows.Forms.TextBox();
+            this.textBox_ThirdCriteria = new System.Windows.Forms.TextBox();
+            this.comboBox_SecondCriteria = new System.Windows.Forms.ComboBox();
+            this.comboBox_FirstCriteria = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.addStudentPage = new System.Windows.Forms.TabPage();
             this.button_AddStudent = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.searchStudentPage.SuspendLayout();
             this.addStudentPage.SuspendLayout();
@@ -61,11 +61,11 @@
             // 
             // searchStudentPage
             // 
-            this.searchStudentPage.Controls.Add(this.button1);
-            this.searchStudentPage.Controls.Add(this.textBox2);
-            this.searchStudentPage.Controls.Add(this.textBox1);
-            this.searchStudentPage.Controls.Add(this.comboBox2);
-            this.searchStudentPage.Controls.Add(this.comboBox1);
+            this.searchStudentPage.Controls.Add(this.button_Search);
+            this.searchStudentPage.Controls.Add(this.textBox_ShowData);
+            this.searchStudentPage.Controls.Add(this.textBox_ThirdCriteria);
+            this.searchStudentPage.Controls.Add(this.comboBox_SecondCriteria);
+            this.searchStudentPage.Controls.Add(this.comboBox_FirstCriteria);
             this.searchStudentPage.Controls.Add(this.label1);
             this.searchStudentPage.Location = new System.Drawing.Point(4, 22);
             this.searchStudentPage.Name = "searchStudentPage";
@@ -74,6 +74,66 @@
             this.searchStudentPage.TabIndex = 0;
             this.searchStudentPage.Text = "Wyszukaj ucznia/uczniów";
             this.searchStudentPage.UseVisualStyleBackColor = true;
+            // 
+            // button_Search
+            // 
+            this.button_Search.Location = new System.Drawing.Point(528, 135);
+            this.button_Search.Name = "button_Search";
+            this.button_Search.Size = new System.Drawing.Size(75, 23);
+            this.button_Search.TabIndex = 5;
+            this.button_Search.Text = "Szukaj";
+            this.button_Search.UseVisualStyleBackColor = true;
+            this.button_Search.Click += new System.EventHandler(this.button_Search_Click);
+            // 
+            // textBox_ShowData
+            // 
+            this.textBox_ShowData.Location = new System.Drawing.Point(10, 170);
+            this.textBox_ShowData.Multiline = true;
+            this.textBox_ShowData.Name = "textBox_ShowData";
+            this.textBox_ShowData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox_ShowData.Size = new System.Drawing.Size(775, 246);
+            this.textBox_ShowData.TabIndex = 4;
+            // 
+            // textBox_ThirdCriteria
+            // 
+            this.textBox_ThirdCriteria.Location = new System.Drawing.Point(528, 90);
+            this.textBox_ThirdCriteria.Name = "textBox_ThirdCriteria";
+            this.textBox_ThirdCriteria.Size = new System.Drawing.Size(124, 20);
+            this.textBox_ThirdCriteria.TabIndex = 3;
+            // 
+            // comboBox_SecondCriteria
+            // 
+            this.comboBox_SecondCriteria.FormattingEnabled = true;
+            this.comboBox_SecondCriteria.Items.AddRange(new object[] {
+            "Rozpoczyna się od",
+            "Zawiera",
+            "Kończy się na"});
+            this.comboBox_SecondCriteria.Location = new System.Drawing.Point(304, 90);
+            this.comboBox_SecondCriteria.Name = "comboBox_SecondCriteria";
+            this.comboBox_SecondCriteria.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_SecondCriteria.TabIndex = 2;
+            // 
+            // comboBox_FirstCriteria
+            // 
+            this.comboBox_FirstCriteria.FormattingEnabled = true;
+            this.comboBox_FirstCriteria.Items.AddRange(new object[] {
+            "Imię",
+            "Nazwisko",
+            "Klasa"});
+            this.comboBox_FirstCriteria.Location = new System.Drawing.Point(111, 90);
+            this.comboBox_FirstCriteria.Name = "comboBox_FirstCriteria";
+            this.comboBox_FirstCriteria.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_FirstCriteria.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(108, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(225, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Wczytaj kryteria wyszukiwania";
             // 
             // addStudentPage
             // 
@@ -92,77 +152,35 @@
             this.addStudentPage.Text = "Dodaj ucznia";
             this.addStudentPage.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // button_AddStudent
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(108, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Wczytaj kryteria wyszukiwania";
+            this.button_AddStudent.Location = new System.Drawing.Point(398, 254);
+            this.button_AddStudent.Name = "button_AddStudent";
+            this.button_AddStudent.Size = new System.Drawing.Size(127, 29);
+            this.button_AddStudent.TabIndex = 6;
+            this.button_AddStudent.Text = "Dodaj";
+            this.button_AddStudent.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // textBox5
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(111, 90);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.textBox5.Location = new System.Drawing.Point(197, 182);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(265, 20);
+            this.textBox5.TabIndex = 5;
             // 
-            // comboBox2
+            // textBox4
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(304, 90);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 2;
+            this.textBox4.Location = new System.Drawing.Point(197, 115);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(265, 20);
+            this.textBox4.TabIndex = 4;
             // 
-            // textBox1
+            // textBox3
             // 
-            this.textBox1.Location = new System.Drawing.Point(528, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(124, 20);
-            this.textBox1.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(10, 170);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(775, 246);
-            this.textBox2.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(528, 135);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Szukaj";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(62, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Imię";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(62, 116);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 17);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Nazwisko";
+            this.textBox3.Location = new System.Drawing.Point(197, 56);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(265, 20);
+            this.textBox3.TabIndex = 3;
             // 
             // label4
             // 
@@ -174,35 +192,25 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Klasa";
             // 
-            // textBox3
+            // label3
             // 
-            this.textBox3.Location = new System.Drawing.Point(197, 56);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(265, 20);
-            this.textBox3.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(62, 116);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 17);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Nazwisko";
             // 
-            // textBox4
+            // label2
             // 
-            this.textBox4.Location = new System.Drawing.Point(197, 115);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(265, 20);
-            this.textBox4.TabIndex = 4;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(197, 182);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(265, 20);
-            this.textBox5.TabIndex = 5;
-            // 
-            // button_AddStudent
-            // 
-            this.button_AddStudent.Location = new System.Drawing.Point(398, 254);
-            this.button_AddStudent.Name = "button_AddStudent";
-            this.button_AddStudent.Size = new System.Drawing.Size(127, 29);
-            this.button_AddStudent.TabIndex = 6;
-            this.button_AddStudent.Text = "Dodaj";
-            this.button_AddStudent.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(62, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Imię";
             // 
             // Form2
             // 
@@ -226,11 +234,11 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage searchStudentPage;
         private System.Windows.Forms.TabPage addStudentPage;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button_Search;
+        private System.Windows.Forms.TextBox textBox_ShowData;
+        private System.Windows.Forms.TextBox textBox_ThirdCriteria;
+        private System.Windows.Forms.ComboBox comboBox_SecondCriteria;
+        private System.Windows.Forms.ComboBox comboBox_FirstCriteria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_AddStudent;
         private System.Windows.Forms.TextBox textBox5;
