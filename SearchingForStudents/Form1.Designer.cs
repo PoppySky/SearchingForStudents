@@ -39,7 +39,6 @@
             this.pictureBox_CodePic = new System.Windows.Forms.PictureBox();
             this.button_LogIn = new System.Windows.Forms.Button();
             this.linkChangePic = new System.Windows.Forms.LinkLabel();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_CodePic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,21 +130,11 @@
             this.linkChangePic.Text = "losuj nowy";
             this.linkChangePic.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkChangePic_LinkClicked);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(191, 313);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "login";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 380);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.linkChangePic);
             this.Controls.Add(this.button_LogIn);
             this.Controls.Add(this.pictureBox_CodePic);
@@ -177,7 +166,6 @@
         private System.Windows.Forms.PictureBox pictureBox_CodePic;
         private System.Windows.Forms.Button button_LogIn;
         private System.Windows.Forms.LinkLabel linkChangePic;
-        private System.Windows.Forms.Button button1;
     }
 }
 

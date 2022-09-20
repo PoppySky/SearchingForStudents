@@ -29,7 +29,10 @@ namespace SearchingForStudents
 
         public void writeFile(string textFile, string text)
         {
-            File.WriteAllText(textFile, text);
+            using (StreamWriter sw = new StreamWriter(textFile, true))
+            {
+                sw.WriteLine(text);
+            }
         }
 
         public bool checkContains(string allWord, string partWord, int optionNum)
@@ -41,7 +44,7 @@ namespace SearchingForStudents
                     regex = $"^{partWord}.+$";
                     break;
                 case 1:     // contains
-                    regex = $"^.+{partWord}.+$";
+                    regex = $"^.*{partWord}.*$";
                     break;
                 case 2:     // endsWith
                     regex = $"^.+{partWord}$";
@@ -50,18 +53,10 @@ namespace SearchingForStudents
                     regex = "";
                     break;
             }
-            
             Regex rx = new Regex(regex,
             RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
-            if (rx.IsMatch(allWord))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return rx.IsMatch(allWord);
         }
 
         private void button_Search_Click(object sender, EventArgs e)
@@ -82,7 +77,7 @@ namespace SearchingForStudents
         {
             string path = "C:\\Users\\student\\Source\\Repos\\Filippo0420\\SearchingForStudents\\SearchingForStudents\\Data\\uczen.txt";
 
-            writeFile(path, $"{textBox_name.Text} {textBox_surname.Text} {textBox_class.Text}");
+            writeFile(path, $"\n{textBox_name.Text} {textBox_surname.Text} {textBox_class.Text}");
         }
     }
 }
