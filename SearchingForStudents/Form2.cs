@@ -33,13 +33,13 @@ namespace SearchingForStudents
             switch (optionNum)
             {
                 case 0:     // startsWith
-                    regex = $"{partWord}.+";
+                    regex = $"^{partWord}.+$";
                     break;
                 case 1:     // contains
-                    regex = $".+{partWord}.+";
+                    regex = $"^.+{partWord}.+$";
                     break;
                 case 2:     // endsWith
-                    regex = $".+{partWord}";
+                    regex = $"^.+{partWord}$";
                     break;
                 default:
                     regex = "";
@@ -61,10 +61,15 @@ namespace SearchingForStudents
 
         private void button_Search_Click(object sender, EventArgs e)
         {
+            string searchedNames = "";
+            int namePart = comboBox_FirstCriteria.SelectedIndex;
+            int optionNum = comboBox_SecondCriteria.SelectedIndex;
             string[] names = readFile("C:\\Users\\student\\Source\\Repos\\Filippo0420\\SearchingForStudents\\SearchingForStudents\\Data\\uczen.txt");
             foreach(string name in names){
-                MessageBox.Show(name);
+                string toCheck = name.Split(' ')[namePart];
+                if (checkContains(toCheck, textBox_ThirdCriteria.Text, optionNum)) searchedNames += $"\t{name}";
             }
+            textBox_ShowData.Text = searchedNames;
         }
     }
 }
