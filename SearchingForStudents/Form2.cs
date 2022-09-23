@@ -44,7 +44,7 @@ namespace SearchingForStudents
                     regex = $"^{partWord}.+$";
                     break;
                 case 1:     // contains
-                    regex = $"^.*{partWord}.*$";
+                    regex = $"^\\w*{partWord}\\w*$";
                     break;
                 case 2:     // endsWith
                     regex = $"^.+{partWord}$";
@@ -77,7 +77,8 @@ namespace SearchingForStudents
         {
             string path = "C:\\Users\\student\\Source\\Repos\\Filippo0420\\SearchingForStudents\\SearchingForStudents\\Data\\uczen.txt";
 
-            writeFile(path, $"\n{textBox_name.Text} {textBox_surname.Text} {textBox_class.Text}");
+            writeFile(path, $"{textBox_name.Text} {textBox_surname.Text} {textBox_class.Text}");
+            MessageBox.Show("Dodano");
         }
     }
 }
