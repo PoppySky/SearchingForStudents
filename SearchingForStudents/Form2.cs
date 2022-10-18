@@ -80,5 +80,11 @@ namespace SearchingForStudents
             writeFile(path, $"{textBox_name.Text} {textBox_surname.Text} {textBox_class.Text}");
             MessageBox.Show("Dodano");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StudentDAO dao = new StudentDAO();
+            dao.connectToDatabase();
+        }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.searchStudentPage = new System.Windows.Forms.TabPage();
+            this.richTextBox_showData = new System.Windows.Forms.RichTextBox();
             this.button_Search = new System.Windows.Forms.Button();
             this.textBox_ThirdCriteria = new System.Windows.Forms.TextBox();
             this.comboBox_SecondCriteria = new System.Windows.Forms.ComboBox();
@@ -43,7 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox_showData = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.searchStudentPage.SuspendLayout();
             this.addStudentPage.SuspendLayout();
@@ -61,6 +62,7 @@
             // 
             // searchStudentPage
             // 
+            this.searchStudentPage.Controls.Add(this.button1);
             this.searchStudentPage.Controls.Add(this.richTextBox_showData);
             this.searchStudentPage.Controls.Add(this.button_Search);
             this.searchStudentPage.Controls.Add(this.textBox_ThirdCriteria);
@@ -74,6 +76,14 @@
             this.searchStudentPage.TabIndex = 0;
             this.searchStudentPage.Text = "Wyszukaj ucznia/uczniów";
             this.searchStudentPage.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox_showData
+            // 
+            this.richTextBox_showData.Location = new System.Drawing.Point(9, 185);
+            this.richTextBox_showData.Name = "richTextBox_showData";
+            this.richTextBox_showData.Size = new System.Drawing.Size(776, 231);
+            this.richTextBox_showData.TabIndex = 6;
+            this.richTextBox_showData.Text = "";
             // 
             // button_Search
             // 
@@ -204,13 +214,15 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Imię";
             // 
-            // richTextBox_showData
+            // button1
             // 
-            this.richTextBox_showData.Location = new System.Drawing.Point(9, 185);
-            this.richTextBox_showData.Name = "richTextBox_showData";
-            this.richTextBox_showData.Size = new System.Drawing.Size(776, 231);
-            this.richTextBox_showData.TabIndex = 6;
-            this.richTextBox_showData.Text = "";
+            this.button1.Location = new System.Drawing.Point(386, 135);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form2
             // 
@@ -247,5 +259,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox richTextBox_showData;
+        private System.Windows.Forms.Button button1;
     }
 }
