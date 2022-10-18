@@ -84,7 +84,11 @@ namespace SearchingForStudents
         private void button1_Click(object sender, EventArgs e)
         {
             StudentDAO dao = new StudentDAO();
-            dao.connectToDatabase();
+            Student stu = new Student { Name = "MArek",
+                Surname = "Marekkkk",
+                Class = "4PR"
+            };
+            dao.create(stu);
         }
     }
 }

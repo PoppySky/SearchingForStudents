@@ -6,46 +6,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace SearchingForStudents
 {
     internal class StudentDAO
     {
-        public List<Student> Students;
-
         public void connectToDatabase()
         {
-            try
+            
+        }
 
-            {
+        public void create(Student student)
+        {
+            String str = "Server=localhost\\SQLEXPRESS2019;Integrated Security=True;Database=StudentsDatabase";
 
-                String str = "Server=localhost\\SQLEXPRESS2019;Integrated Security=True;Database=StudentsDatabase";
+            SqlConnection con = new SqlConnection(str);
 
-                String query = "select * from Students";
+            String query = $"INSERT INTO Students (Name, Surname, Class) VALUES ({student.Name}, {student.Surname}, {student.Class})";
 
-                SqlConnection con = new SqlConnection(str);
+            //SqlCommand cmd = new SqlCommand(query, con);
 
-                SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
 
-                con.Open();
+            DataSet ds = new DataSet();
 
-                DataSet ds = new DataSet();
+            MessageBox.Show("connected with sql server");
 
-                MessageBox.Show("connected with sql server");
-
-                con.Close();
-
-            }
-
-            catch (Exception es)
-
-            {
-
-                MessageBox.Show(es.Message);
+            con.Close();
 
 
+        }
 
-            }
+        public List<Student> select()
+        {
+            List<Student> students = new List<Student>();
+
+
+
+
+            return students;
         }
     }
 }
