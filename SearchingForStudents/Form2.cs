@@ -61,7 +61,9 @@ namespace SearchingForStudents
 
         private void button_Search_Click(object sender, EventArgs e)
         {
-            string searchedNames = "";
+            StudentDAO studentDAO = new StudentDAO();
+            
+            /*string searchedNames = "";
             int namePart = comboBox_FirstCriteria.SelectedIndex;
             int optionNum = comboBox_SecondCriteria.SelectedIndex;
             string path = "C:\\Users\\student\\Source\\Repos\\Filippo0420\\SearchingForStudents\\SearchingForStudents\\Data\\uczen.txt";
@@ -69,16 +71,27 @@ namespace SearchingForStudents
             foreach(string name in names){
                 string toCheck = name.Split(' ')[namePart];
                 if (checkContains(toCheck, textBox_ThirdCriteria.Text, optionNum)) searchedNames += $"{name}\n";
+            }*/
+            List<Student> students = studentDAO.select("'Name'", "'T%'");
+            foreach (Student student in students)
+            {
+                richTextBox_showData.Text += student.Name;
             }
-            richTextBox_showData.Text = searchedNames;
+            
         }
 
         private void button_AddStudent_Click(object sender, EventArgs e)
         {
-            string path = "C:\\Users\\student\\Source\\Repos\\Filippo0420\\SearchingForStudents\\SearchingForStudents\\Data\\uczen.txt";
 
-            writeFile(path, $"{textBox_name.Text} {textBox_surname.Text} {textBox_class.Text}");
-            MessageBox.Show("Dodano");
+
+            StudentDAO studentDAO = new StudentDAO();
+            Student student = new Student
+            {
+                Name = textBox_name.Text,
+                Surname = textBox_surname.Text,
+                Class = textBox_class.Text
+            };
+            studentDAO.create(student);
         }
 
         private void button1_Click(object sender, EventArgs e)
