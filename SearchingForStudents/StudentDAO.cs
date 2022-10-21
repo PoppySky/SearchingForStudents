@@ -23,7 +23,7 @@ namespace SearchingForStudents
 
             SqlConnection con = new SqlConnection(str);
 
-            String query = $"INSERT INTO Students (Name, Surname, Class) VALUES ({student.Name}, {student.Surname}, {student.Class})";
+            String query = $"INSERT INTO StudentsData (Name, Surname, Class) VALUES ('{student.Name}', '{student.Surname}', '{student.Class}')";
 
             SqlCommand cmd = new SqlCommand(query, con);
 
