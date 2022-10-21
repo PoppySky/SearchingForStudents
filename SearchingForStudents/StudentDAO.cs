@@ -25,17 +25,23 @@ namespace SearchingForStudents
 
             String query = $"INSERT INTO Students (Name, Surname, Class) VALUES ({student.Name}, {student.Surname}, {student.Class})";
 
-            //SqlCommand cmd = new SqlCommand(query, con);
+            SqlCommand cmd = new SqlCommand(query, con);
 
-            con.Open();
-
-            DataSet ds = new DataSet();
-
-            MessageBox.Show("connected with sql server");
-
-            con.Close();
-
-
+            SqlDataReader dbr;
+            try
+            {
+                con.Open();
+                MessageBox.Show("connected with sql server");
+                dbr = cmd.ExecuteReader();
+                MessageBox.Show("saved");
+                while (dbr.Read())
+                {
+                }
+            }
+            catch (Exception es)
+            {
+                MessageBox.Show(es.Message);
+            }
         }
 
         public List<Student> select()

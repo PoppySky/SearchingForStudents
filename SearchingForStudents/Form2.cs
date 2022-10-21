@@ -86,7 +86,7 @@ namespace SearchingForStudents
             StudentDAO dao = new StudentDAO();
             Student stu = new Student { Name = "MArek",
                 Surname = "Marekkkk",
-                Class = "4PR"
+                Class = "PR"
             };
             dao.create(stu);
         }
