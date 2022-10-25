@@ -56,6 +56,7 @@ namespace SearchingForStudents
             SqlConnection con = new SqlConnection(str);
 
             String query = $"SELECT * FROM StudentsData WHERE {column} LIKE {condition}";
+            //String query = $"SELECT * FROM StudentsData";
 
             SqlCommand cmd = new SqlCommand(query, con);
 
@@ -70,12 +71,14 @@ namespace SearchingForStudents
                     string sname = (string)dbr["Name"]; // name is string value
                     string ssurname = (string)dbr["Surname"];
                     string sclass = dbr["Class"].ToString();
-                    students.Append<Student>(new Student
+                    Student student = new Student
                     {
+                        Id = int.Parse(sID),
                         Name = sname,
                         Surname = ssurname,
                         Class = sclass
-                    });
+                    };
+                    students.Add(student);
                 }
             }
             catch (Exception es)

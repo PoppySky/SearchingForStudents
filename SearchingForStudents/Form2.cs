@@ -61,7 +61,37 @@ namespace SearchingForStudents
 
         private void button_Search_Click(object sender, EventArgs e)
         {
+            richTextBox_showData.Clear();
+            
             StudentDAO studentDAO = new StudentDAO();
+            string column = "";
+            string condition = "";
+
+            switch (comboBox_SecondCriteria.SelectedIndex)
+            {
+                case 0:
+                    condition = "'" + textBox_ThirdCriteria.Text + "%'";
+                    break;
+                case 1:
+                    condition = "'%" + textBox_ThirdCriteria.Text + "%'";
+                    break;
+                case 2:
+                    condition = "'%" + textBox_ThirdCriteria.Text + "'";
+                    break;
+            }
+
+            switch (comboBox_FirstCriteria.SelectedIndex)
+            {
+                case 0:
+                    column = "Name";
+                    break;
+                case 1:
+                    column = "Surname";
+                    break;
+                case 2:
+                    column = "Class";
+                    break;
+            }
             
             /*string searchedNames = "";
             int namePart = comboBox_FirstCriteria.SelectedIndex;
@@ -72,10 +102,11 @@ namespace SearchingForStudents
                 string toCheck = name.Split(' ')[namePart];
                 if (checkContains(toCheck, textBox_ThirdCriteria.Text, optionNum)) searchedNames += $"{name}\n";
             }*/
-            List<Student> students = studentDAO.select("'Name'", "'T%'");
+            List<Student> students = studentDAO.select(column, condition);
             foreach (Student student in students)
             {
-                richTextBox_showData.Text += student.Name;
+                richTextBox_showData.Text += student.Id + " " + student.Name + " " + student.Surname + " " + student.Class + "\n";
+
             }
             
         }
