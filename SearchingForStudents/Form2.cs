@@ -76,7 +76,7 @@ namespace SearchingForStudents
                     condition = "'%" + textBox_ThirdCriteria.Text + "%'";
                     break;
                 case 2:
-                    condition = "'%" + textBox_ThirdCriteria.Text + "'";
+                    condition = "'%" + textBox_ThirdCriteria.Text + "%'";
                     break;
             }
 

@@ -26,7 +26,7 @@ namespace SearchingForStudents
 
             SqlConnection con = new SqlConnection(str);
 
-            String query = $"INSERT INTO StudentsData (Name, Surname, Class) VALUES ('{student.Name}', '{student.Surname}', '{student.Class}')";
+            String query = $"INSERT INTO Students (Name, SurName, Class) VALUES ('{student.Name}', '{student.Surname}', '{student.Class}')";
 
             SqlCommand cmd = new SqlCommand(query, con);
 
@@ -55,7 +55,7 @@ namespace SearchingForStudents
 
             SqlConnection con = new SqlConnection(str);
 
-            String query = $"SELECT * FROM StudentsData WHERE {column} LIKE {condition}";
+            String query = $"SELECT * FROM Students WHERE {column} LIKE {condition}";
             //String query = $"SELECT * FROM StudentsData";
 
             SqlCommand cmd = new SqlCommand(query, con);
